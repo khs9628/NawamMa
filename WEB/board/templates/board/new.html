@@ -1,0 +1,48 @@
+{% extends 'extend.html' %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+<div class="main main-raised">
+    <div class="section section-contacts">
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto">
+                <h2 class="text-center title">NewBoard</h2>
+                <h4 class="text-center description font">분실물이나 지하철내에서 일어나는 사건들에 대해 이야기하고 기록해보세요.</h4>
+                <form class="contact-form" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.title|as_crispy_field}}
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                {{ form.stat|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                {{ form.hashtags|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <i class="material-icons">add_photo_alternate</i>{{ form.image|as_crispy_field }}
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group">
+                        {{ form.content|as_crispy_field }}
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-4 ml-auto mr-auto text-center">
+                            <input class="btn btn-primary" type="submit" value="제출하기">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

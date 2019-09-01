@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">나왐마</string>
+    <string name="menu1">역조회</string>
+    <string name="menu2">게시판</string>
+    <string name="menu3">자리조회</string>
+    <string name="menu4">마이페이지</string>
+</resources>

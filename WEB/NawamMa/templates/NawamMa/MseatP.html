@@ -1,0 +1,198 @@
+{% extends 'extend.html' %}
+
+{% block main %}
+<div class="main main-raised">
+    <div class="section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 ml-auto mr-auto">
+                    <div class="profile-tabs">
+                        <ul class="nav nav-pills nav-pills-primary nav-pills-icons justify-content-center"
+                            role="tablist">
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#seat" data-toggle="tab">
+                                    <i class="material-icons">tram</i> 좌석배치도
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body ">
+                <div class="tab-content text-center">
+
+                    <div class="tab-pane active" id="seat">
+
+                        <!-- 새로고침 버튼 -->
+                        <a onClick="window.location.reload()" class="btn btn-primary btn-fab btn-link">
+                            <i class="material-icons">autorenew</i>
+                        </a>
+
+                        <!-- 세로형 좌석배치 -->
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-success btn-fab btn-link">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            <button class="btn btn-success btn-fab btn-link">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-success btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            {% if json_data.seat == '0' %}
+                            <button class="btn btn-success btn-fab btn-link">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            {% else %}
+                            <button class="btn btn-success btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            {% endif %}
+                            
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-success btn-fab btn-link">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            <button class="btn btn-success btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-default btn-fab btn-link">
+                                <i class="material-icons">play_for_work</i>
+                            </button>
+                            <button class="btn btn-default btn-fab btn-link">
+                                <i class="material-icons">play_for_work</i>
+                            </button>
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+
+                            <a href="{% url 'NawamMa:preRequset' %}" class="btn btn-danger btn-fab"
+                                data-toggle="tooltip" data-placement="right" title="자리요청">
+                                <i class="material-icons">event_seat</i>
+                            </a>
+
+                            {% if json_data.seat2 == '0' %}
+                            <a href="{% url 'NawamMa:preRequset' %}" class="btn btn-danger btn-fab btn-link"
+                                data-toggle="tooltip" data-placement="right" title="자리요청">
+                                <i class="material-icons">event_seat</i>
+                            </a>
+                            {% else %}
+                            <a href="{% url 'NawamMa:preRequset' %}" class="btn btn-danger btn-fab"
+                                data-toggle="tooltip" data-placement="right" title="자리요청">
+                                <i class="material-icons">event_seat</i>
+                            </a>
+                            {% endif %}
+
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-info btn-fab btn-link">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            <button class="btn btn-info btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-info btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            <button class="btn btn-info btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-info btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            {% if json_data.seat3 == '0' %}
+                                <button class="btn btn-info btn-fab btn-link">
+                                    <i class="material-icons">event_seat</i>
+                                </button>
+                                {% else %}
+                                <button class="btn btn-info btn-fab">
+                                    <i class="material-icons">event_seat</i>
+                                </button>
+                                {% endif %}
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-info btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            <button class="btn btn-info btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-info btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            {% if json_data.seat4 == '0' %}
+                                <button class="btn btn-info btn-fab btn-link">
+                                    <i class="material-icons">event_seat</i>
+                                </button>
+                            {% else %}
+                                <button class="btn btn-info btn-fab">
+                                    <i class="material-icons">event_seat</i>
+                                </button>
+                            {% endif %}
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <a href="{% url 'NawamMa:preRequset' %}" class="btn btn-danger btn-fab btn-link"
+                                data-toggle="tooltip" data-placement="right" title="자리요청">
+                                <i class="material-icons">event_seat</i>
+                            </a>
+                            <a href="{% url 'NawamMa:preRequset' %}" class="btn btn-danger btn-fab"
+                                data-toggle="tooltip" data-placement="right" title="자리요청">
+                                <i class="material-icons">event_seat</i>
+                            </a>
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-default btn-fab btn-link">
+                                <i class="material-icons">play_for_work</i>
+                            </button>
+                            <button class="btn btn-default btn-fab btn-link">
+                                <i class="material-icons">play_for_work</i>
+                            </button>
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-success btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            <button class="btn btn-success btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-success btn-fab btn-link">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            <button class="btn btn-success btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <button class="btn btn-success btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            <button class="btn btn-success btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                        </div>
+                        <!-- 세로형 좌석배치 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

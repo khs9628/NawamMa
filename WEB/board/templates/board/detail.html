@@ -1,0 +1,33 @@
+{% extends 'extend.html' %}
+{% block main %}
+<br>
+<br>
+<div class="main main-raised" style=text-align:center;>
+    <div class="section">
+        <div class="container">
+            <h2>제목: {{board.title}}</h2>
+            <p>글쓴이: {{board.writer}}</p>
+            {% if board.image %}
+            <img src="{{ board.image.url }}" alt="image" style="width: 600px; height:auto;">
+            {% endif %}
+            <p>내용: {{board.content}}</p>
+        </div>
+        {% for comment in board.comments.all %}
+        <div class="card">
+            <div class="alert card-body" style="margin-bottom: 0%">
+                {{ comment.comment_text }}
+                <a style="color: black;" href="{% url 'board:comment_delete' board.id comment.id %}" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></a>
+            </div>
+          </div>
+        {% endfor %}
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form }}
+            </div>
+            <input class="btn btn-primary" type="submit" value="댓글쓰기">
+        </form>
+    </div>
+</div>
+{% endblock %}

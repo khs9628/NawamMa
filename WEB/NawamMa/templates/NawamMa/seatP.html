@@ -1,0 +1,162 @@
+{% extends 'extend.html' %}
+
+{% block main %}
+<div class="main main-raised">
+    <div class="section text-center">
+        <div class="container">
+            <!-- ----------- 테스트 ---------------- -->
+            {% if json_data.seat == '0' %}
+            <!-- 빈자리일 경우 -->
+            <button class="btn btn-success btn-fab btn-link">
+                <i class="material-icons">event_seat</i>
+            </button>
+            {% else %}
+            <button class="btn btn-success btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+            {% endif %}
+            <!-- ----------- 테스트 ---------------- -->
+
+            <!-- 가로형 좌석배치 -->
+            <button class="btn btn-success btn-fab btn-link">
+                <i class="material-icons">event_seat</i>
+            </button>
+            {% if json_data.seat == '0' %}
+            <!-- 빈자리일 경우 -->
+            <button class="btn btn-success btn-fab btn-link">
+                <i class="material-icons">event_seat</i>
+            </button>
+            {% else %}
+            <button class="btn btn-success btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+            {% endif %}
+
+            <button class="btn btn-default btn-fab btn-link">
+                <i class="material-icons">play_for_work</i>
+            </button>
+
+            {% if json_data.seat2 == '0' %}
+            <!-- 빈자리일 경우 -->
+            <a href="{% url 'NawamMa:preRequset' %}" class="btn btn-danger btn-fab btn-link seat" data-toggle="tooltip"
+                data-placement="bottom" title="자리요청">
+                <i class="material-icons">event_seat</i>
+            </a>
+            {% else %}
+            <a href="{% url 'NawamMa:preRequset' %}" class="btn btn-danger btn-fab seat" data-toggle="tooltip"
+                data-placement="bottom" title="자리요청">
+                <i class="material-icons">event_seat</i>
+            </a>
+            {% endif %}
+
+            
+            <button class="btn btn-info btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+            <button class="btn btn-info btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+            {% if json_data.seat3 == '0' %}
+            <!-- 빈자리일 경우 -->
+            <button class="btn btn-info btn-fab btn-link">
+                <i class="material-icons">event_seat</i>
+            </button>
+            {% else %}
+            <button class="btn btn-info btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+            {% endif %}
+            <button class="btn btn-info btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+            {% if json_data.seat4 == '0' %}
+            <!-- 빈자리일 경우 -->
+            <button class="btn btn-info btn-fab btn-link">
+                <i class="material-icons">event_seat</i>
+            </button>
+            {% else %}
+            <button class="btn btn-info btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+            {% endif %}
+            <a href="{% url 'NawamMa:preRequset' %}" class="btn btn-danger btn-fab btn-link" data-toggle="tooltip"
+                data-placement="bottom" title="자리요청">
+                <i class="material-icons">event_seat</i>
+            </a>
+
+            <button class="btn btn-default btn-fab btn-link">
+                <i class="material-icons">play_for_work</i>
+            </button>
+
+            <button class="btn btn-success btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+            <button class="btn btn-success btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+            <button class="btn btn-success btn-fab btn-link">
+                <i class="material-icons">event_seat</i>
+            </button>
+
+
+            <br>
+            <br>
+            <h2 class="font"><b>{{ number }}</b>번 칸</h2>
+            <br>
+            <br>
+
+            <button class="btn btn-success btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+            <button class="btn btn-success btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+            <button class="btn btn-success btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+
+            <button class="btn btn-default btn-fab btn-link">
+                <i class="material-icons">play_for_work</i>
+            </button>
+
+            <a href="{% url 'NawamMa:preRequset' %}" class="btn btn-danger btn-fab" data-toggle="tooltip"
+                data-placement="top" title="자리요청">
+                <i class="material-icons">event_seat</i>
+            </a>
+            <button class="btn btn-default btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+            <button class="btn btn-default btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+            <button class="btn btn-default btn-fab btn-link">
+                <i class="material-icons">event_seat</i>
+            </button>
+            <button class="btn btn-default btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+            <button class="btn btn-default btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+            <a href="{% url 'NawamMa:preRequset' %}" class="btn btn-danger btn-fab" data-toggle="tooltip"
+                data-placement="top" title="자리요청">
+                <i class="material-icons">event_seat</i>
+            </a>
+
+            <button class="btn btn-default btn-fab">
+                <i class="material-icons">play_for_work</i>
+            </button>
+
+            <button class="btn btn-success btn-fab btn-link">
+                <i class="material-icons">event_seat</i>
+            </button>
+            <button class="btn btn-success btn-fab btn-link">
+                <i class="material-icons">event_seat</i>
+            </button>
+            <button class="btn btn-success btn-fab">
+                <i class="material-icons">event_seat</i>
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}

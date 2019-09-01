@@ -1,0 +1,206 @@
+{% extends 'extend.html' %}
+{% load staticfiles %}
+
+<!-- IMPORT Table css -->
+{% block css %}
+<link href="/static/assets/js/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+<div class="main main-raised">
+  <div class="section">
+    <div class="container">
+      <div id="navigation-pills">
+        <div class="row">
+          <div class="col-lg-6 col-md-8">
+            <ul class="nav nav-pills nav-pills-primary nav-pills-icons" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" href="#dashboard-1" role="tab" data-toggle="tab">
+                  <i class="material-icons">dashboard</i> 공지사항
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#schedule-1" role="tab" data-toggle="tab">
+                  <i class="material-icons">schedule</i> 자유게시판
+                </a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'board:newboard' %}">
+                  <i class="material-icons">create</i> 글쓰기
+                </a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content tab-space">
+        <!-- 공지사항 -->
+        <div class="tab-pane active" id="dashboard-1">
+          <div class="row">
+            <div class="col-md-12 mr-auto ml-auto">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>번호</th>
+                      <th>제목</th>
+                      <th>내용</th>
+                      <th>날짜</th>
+                      <th>수정</th>
+                      <th>삭제</th>
+                    </tr>
+                  </thead>
+                  <!-- <tfoot>
+                    <tr>
+                      <th>번호</th>
+                      <th>제목</th>
+                      <th>내용</th>
+                      <th>날짜</th>
+                      <th>수정</th>
+                      <th>삭제</th>
+                    </tr>
+                  </tfoot> -->
+                  <tbody>
+                    {% for board in boards.all %}
+                    {% if board.stat == "I" %}
+                    <tr>
+                      <td>{{ board.id }}</td>
+                      <td>
+                        {% for hashtag in board.hashtags.all %}
+                        {{ hashtag.name }}
+                        {% endfor %}
+                        {{ board.title }}</td>
+                      <td>{{ board.summary }}<a href="{% url 'board:detail' pk=board.pk %}">...</a></td>
+                      <td>{{ board.date }}</td>
+                      {% if board.writer == user.nickname %}
+                      <td style="text-align:center">
+                        <a href="{% url 'board:edit' pk=board.pk %}" class="btn btn-success btn-circle">
+                          <i class="fa fa-check"></i>
+                        </a>
+                      </td>
+                      <td style="text-align:center">
+                        <a href="{% url 'board:remove' pk=board.pk %}" class="btn btn-danger btn-circle">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                      </td>
+                      {% else %}
+                      <td style="text-align:center">
+                        <a href="{% url 'board:edit' pk=board.pk %}" class="btn btn-success btn-circle disabled">
+                          <i class="fa fa-check"></i>
+                        </a>
+                      </td>
+                      <td style="text-align:center">
+                        <a href="{% url 'board:remove' pk=board.pk %}" class="btn btn-danger btn-circle disabled">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                      </td>
+                      {% endif %}
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 자유게시판 -->
+        <div class="tab-pane" id="schedule-1">
+          <div class="row">
+            <div class="col-md-12 mr-auto ml-auto">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable1" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>번호</th>
+                      <th>제목</th>
+                      <th>내용</th>
+                      <th>날짜</th>
+                      <th>수정</th>
+                      <th>삭제</th>
+                    </tr>
+                  </thead>
+                  <!-- <tfoot>
+                    <tr>
+                      <th>글번호</th>
+                      <th>제목</th>
+                      <th>내용</th>
+                      <th>날짜</th>
+                      <th>수정</th>
+                      <th>삭제</th>
+                    </tr>
+                  </tfoot> -->
+                  <tbody>
+                    {% for board in boards.all %}
+                    {% if board.stat == "F" %}
+                    <tr>
+                      <td>{{ board.id }}</td>
+                      <td>
+                        {% for hashtag in board.hashtags.all %}
+                        {{ hashtag.name }}
+                        {% endfor %}
+                        {{ board.title }}</td>
+                      <td>{{ board.summary }}<a href="{% url 'board:detail' pk=board.pk %}">...</a></td>
+                      <td>{{ board.date }}</td>
+                      {% if board.writer == user.nickname %}
+                      <td style="text-align:center">
+                        <a href="{% url 'board:edit' pk=board.pk %}" class="btn btn-success btn-circle">
+                          <i class="fa fa-check"></i>
+                        </a>
+                      </td>
+                      <td style="text-align:center">
+                        <a href="{% url 'board:remove' pk=board.pk %}" class="btn btn-danger btn-circle">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                      </td>
+                      {% else %}
+                      <td style="text-align:center">
+                        <a href="{% url 'board:edit' pk=board.pk %}" class="btn btn-success btn-circle disabled">
+                          <i class="fa fa-check"></i>
+                        </a>
+                      </td>
+                      <td style="text-align:center">
+                        <a href="{% url 'board:remove' pk=board.pk %}" class="btn btn-danger btn-circle disabled">
+                          <i class="fa fa-trash"></i>
+                        </a>
+                      </td>
+                      {% endif %}
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+
+<!-- IMPORT Table JS -->
+{% block javascript %}
+<script src="/static/assets/js/datatables/jquery.dataTables.min.js"></script>
+<script src="/static/assets/js/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="/static/assets/js/datatables/dataTables.responsive.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#dataTable').DataTable({
+      responsive: true
+    });
+  });
+
+  $(document).ready(function () {
+    $('#dataTable1').DataTable({
+      responsive: true
+    });
+  });
+</script>
+{% endblock %}

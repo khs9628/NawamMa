@@ -1,0 +1,17 @@
+{% extends 'extend.html' %}
+{% block main %}
+<br><br>
+<div class="main main-raised">
+    <div class="section"> 
+        <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <input class="btn btn-dark" type="submit" value="수정하기">
+        </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

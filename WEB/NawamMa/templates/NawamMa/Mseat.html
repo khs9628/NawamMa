@@ -1,0 +1,173 @@
+{% extends 'extend.html' %}
+
+{% block main %}
+<div class="main main-raised">
+    <div class="section text-center">
+        <div class="container">
+                    <!-- ----------- 테스트 ---------------- -->
+                    {% if json_data.seat == '0' %}
+                    <button class="btn btn-success btn-fab btn-link">
+                        <i class="material-icons">event_seat</i>
+                    </button>
+                    {% else %}
+                    <button class="btn btn-success btn-fab">
+                        <i class="material-icons">event_seat</i>
+                    </button>
+                    {% endif %}
+                    <!-- ----------- 테스트 ---------------- -->
+
+                    <!-- 세로형 좌석배치 -->
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-success btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                        <button class="btn btn-success btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                            {% if json_data.seat == '0' %}
+                            <button class="btn btn-success btn-fab btn-link">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            {% else %}
+                            <button class="btn btn-success btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            {% endif %}
+                        <button class="btn btn-success btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-success btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                        <button class="btn btn-success btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                    </div>
+
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-default btn-fab btn-link">
+                            <i class="material-icons">play_for_work</i>
+                        </button>
+                        <button class="btn btn-default btn-fab btn-link">
+                            <i class="material-icons">play_for_work</i>
+                        </button>
+                    </div>
+
+                    <div class="d-flex justify-content-around">
+                            {% if json_data.seat2 == '0' %}
+                            <button class="btn btn-danger btn-fab btn-link">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            {% else %}
+                            <button class="btn btn-danger btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            {% endif %}
+                        <button class="btn btn-danger btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-info btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                        <button class="btn btn-info btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-info btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                        <button class="btn btn-info btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                            {% if json_data.seat3 == '0' %}
+                            <button class="btn btn-info btn-fab btn-link">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            {% else %}
+                            <button class="btn btn-info btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            {% endif %}
+                        <button class="btn btn-info btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-info btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                        <button class="btn btn-info btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                            {% if json_data.seat4 == '0' %}
+                            <button class="btn btn-info btn-fab btn-link">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            {% else %}
+                            <button class="btn btn-info btn-fab">
+                                <i class="material-icons">event_seat</i>
+                            </button>
+                            {% endif %}
+                        <button class="btn btn-info btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-danger btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                        <button class="btn btn-danger btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                    </div>
+
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-default btn-fab btn-link">
+                            <i class="material-icons">play_for_work</i>
+                        </button>
+                        <button class="btn btn-default btn-fab btn-link">
+                            <i class="material-icons">play_for_work</i>
+                        </button>
+                    </div>
+
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-success btn-fab">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                        <button class="btn btn-success btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-success btn-fab">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                        <button class="btn btn-success btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <button class="btn btn-success btn-fab">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                        <button class="btn btn-success btn-fab btn-link">
+                            <i class="material-icons">event_seat</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

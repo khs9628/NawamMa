@@ -1,0 +1,61 @@
+{% extends 'extend.html' %}
+
+{% block main %}
+
+<div class="main main-raised">
+    <div class="section">
+        <div class="container center">
+            <h1 class="font"> {{user.nickname}}'s MyPage</h1>
+            <br>
+            <div style="margin-right: auto; margin-left: auto;">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-3">
+                        <i class="material-icons material-icons1">face</i>
+                        <h3 class="font">Nickname: <br>{{user.nickname}}</h3>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <i class="material-icons material-icons1">mail</i>
+                        <h3 class="font">Email: {{user.email}}</h3>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <i class="material-icons material-icons1">cake</i>
+                        <h3 class="font">Birthday: <br>{{user.birth}}</h3>
+                    </div>
+                    <div class="col-xs-6 col-sm-3">
+                        <i class="material-icons material-icons1">phone</i>
+                        <h3 class="font">PhoneNumber: <br>{{user.cellphone}}</h3>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <h2 class="font">당신이 작성한 게시글</h2>
+            <div class="row">
+                {% for board in boards.all %}
+                {% if board.writer == user.nickname %}
+                <div class="col-sm-4 col-md-4 container">
+                    <a class="card" style="background-color: #DAD9FF; " href="{% url 'board:detail' pk=board.pk %}">
+
+                        <h3 class="font" style="text-align: center;">{{board.title}}</h3>
+                        <hr>
+                        <div class="container">
+                            <p> 날짜: {{board.date}}</p>
+                            <p> 내용: {{board.summary}}</p>
+                        </div>
+                        <a href="{% url 'board:remove' pk=board.pk %}" class="btn btn-danger btn-circle">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                        <a href="{% url 'board:edit' pk=board.pk %}" class="btn btn-success btn-circle">
+                            <i class="fa fa-check"></i>
+                        </a>
+
+                    </a>
+                </div>
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

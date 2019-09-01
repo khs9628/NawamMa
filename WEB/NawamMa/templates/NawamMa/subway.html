@@ -1,0 +1,46 @@
+{% extends 'extend.html' %}
+
+{% block main %}
+<div class="main main-raised">
+    <div class="section text-center">
+        <div class="container">
+            <h2 class="font"><b>{{ departure }}</b>에서 <b>{{ destination }}</b>까지 가는 열차의 혼잡도입니다.</h2>
+            <div class="row">
+                <div class="col-sm-3">
+                    <a class="btn btn-success btn-round" href="{% url 'NawamMa:seat' number=1 %}">1번 칸<br>
+                    <img src="/static/assets/img/혼잡도/empty.png" width="70%" height="70%" /></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="btn btn-danger btn-round" href="{% url 'NawamMa:seat' number=2 %}">2번 칸<br>
+                    <img src="/static/assets/img/혼잡도/full.png" width="70%" height="70%" /></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="btn btn-warning btn-round" href="{% url 'NawamMa:seat' number=3 %}">3번 칸<br>
+                    <img src="/static/assets/img/혼잡도/soso.png" width="70%" height="70%" /></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="btn btn-success btn-round" href="{% url 'NawamMa:seat' number=4 %}">4번 칸<br>
+                    <img src="/static/assets/img/혼잡도/empty.png" width="70%" height="70%" /></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="btn btn-warning btn-round" href="{% url 'NawamMa:seat' number=5 %}">5번 칸<br>
+                    <img src="/static/assets/img/혼잡도/soso.png" width="70%" height="70%" /></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="btn btn-success btn-round" href="{% url 'NawamMa:seat' number=6 %}">6번 칸<br>
+                    <img src="/static/assets/img/혼잡도/empty.png" width="70%" height="70%" /></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="btn btn-warning btn-round" href="{% url 'NawamMa:seat' number=7 %}">7번 칸<br>
+                    <img src="/static/assets/img/혼잡도/soso.png" width="70%" height="70%" /></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="btn btn-danger btn-round" href="{% url 'NawamMa:seat' number=8 %}">8번 칸<br>
+                    <img src="/static/assets/img/혼잡도/full.png" width="70%" height="70%" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
